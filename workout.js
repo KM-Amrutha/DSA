@@ -396,21 +396,156 @@
 
 // console.log(twoSum([2, 7, 11, 15], 9)); 
 
-function findDuplicates(nums) {
-   let numCount = {};
-   let duplicates = [];
+// function findDuplicates(nums) {
+//    let numCount = {};
+//    let duplicates = [];
 
-   for (let num of nums) {
-       if (numCount[num]) {
-           duplicates.push(num);
-       } else {
-           numCount[num] = 1;
-       }
+//    for (let num of nums) {
+//        if (numCount[num]) {
+//            duplicates.push(num);
+//        } else {
+//            numCount[num] = 1;
+//        }
+//    }
+//    return [...new Set(duplicates)];
+// }
+
+// console.log(findDuplicates([1, 2, 3, 1, 2, 4]));
+//  Output: [1, 2]
+
+
+
+
+class Node{
+   constructor(value){
+      this.value = value
+      this.next = null
    }
-   return [...new Set(duplicates)];
 }
 
-console.log(findDuplicates([1, 2, 3, 1, 2, 4]));
- // Output: [1, 2]
+class linkedList{
+   constructor(){
+      this.head = null
+      this.size=0
+   }
+
+   isempty(){
+      return this.size ==0
+   } 
+
+   getvalue(){
+      return this.size
+   }
+
+   prepend(value){
+      let node = new  Node(value)
+      if(this.isempty()){
+         this.head = node
+      } else {
+         node.next = this.head
+        this.head =node
+      }
 
 
+
+      this.size++
+   }
+    apend(value){
+      const node = new Node(value)
+      if(this.isempty()){
+         this.head = node
+      } else {
+         let curr = this.head
+         while(curr.next){
+            curr = curr.next
+         }
+         curr.next = node
+
+      }
+      this.size++
+    }
+
+    insertValue(value,index){
+      if(index<0 || index > this.size){
+         return null
+      } 
+      if(index ==0){
+         this.prepend(value)
+      
+      }
+       else {
+          const node = new Node(value)
+         let curr = this.head
+         for(let i=0;i<index-1;i++){
+            curr =curr.next
+         }
+         node.next = curr.next
+         curr.next = node
+         this.size++
+
+      }
+      
+    }
+
+
+        remove(index){
+         if(index<0 || this.size< index){
+            return null
+         }
+         let rem;
+         if(index == 0){
+            rem = this.head
+            this.head = this.head.next
+            return rem
+         } else {
+            let curr = this.head
+            for(let i=0;i<index-1;i++){
+               curr= curr.next
+            }
+            rem = curr.next
+            curr.next = rem.next
+
+         }
+         this.size--
+         return rem.value
+
+      }
+
+      removeMiddle(){
+         let fast = this.head
+         let slow = this.head
+         let prev = null
+  while(fast && fast.next){
+   fast = fast.next.next
+   slow = prev
+   slow = slow.next
+  }
+  prev.next  = slow.next
+  this.size--
+
+      }
+
+      print(){
+         let curr = this.head
+         let value=''
+         while(curr){
+            value += ` => ${curr.value}`
+            curr =curr.next
+         }
+
+         console.log('value is: ', value)
+      }
+
+
+
+}
+const link =new linkedList()
+link .prepend(1)
+link .prepend(3)
+link.prepend(5)
+link.prepend(8)
+link.prepend(9)
+
+link.print()
+link.removeMiddle()
+link.print()
