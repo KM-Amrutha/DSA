@@ -69,24 +69,24 @@ class LinkedList {
       console.log("no index found");
       return null;
     }
-
-    let removedNode;
+    
+    let rem;
 
     if (index === 0) {
-      removedNode = this.head;
+      rem = this.head;
       this.head = this.head.next;
+      return rem.value;
     } else {
       let curr = this.head;
       for (let i = 0; i < index - 1; i++) {
         curr = curr.next;
       }
-      removedNode = curr.next;
-      curr.next = removedNode.next;
+      rem = curr.next;
+      curr.next = rem.next;
     }
-
-    this.size--;
-    return removedNode.value;
+    this.size--; 
   }
+
 
   removeByValue(value) {
     if (this.isEmpty()) return null;

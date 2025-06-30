@@ -415,137 +415,92 @@
 
 
 
+// class Node{
+//    constructor(value){
+//       this.value = value
+//       this.left = null
+//       this.right = null
+//    }
+// }
 
-class Node{
-   constructor(value){
-      this.value = value
-      this.next = null
-   }
-}
+// class bst{
+//    constructor(){
+//       this.root = null
+//    }
 
-class linkedList{
-   constructor(){
-      this.head = null
-      this.size=0
-   }
+//     isempty(){
+//    return this.size == 0
+//     }
 
-   isempty(){
-      return this.size ==0
-   } 
+//     getsize(){
+//       return this.size
+//     }
 
-   getvalue(){
-      return this.size
-   }
+//   insertvalue(value){
+//    let newNode = new Node(value)
+//    if(this.isempty()){
+//       this.root = newNode
+//    }else {
+//       this.insert(this.root,newNode)
+//    }
+//   }
 
-   prepend(value){
-      let node = new  Node(value)
-      if(this.isempty()){
-         this.head = node
-      } else {
-         node.next = this.head
-        this.head =node
-      }
+//   insert(root,newnode){
+//    if(newnode.value< root.value){
+//       if(root.left == null){
+//          root.left = newnode
+//       } else {
+//          this.insert(root.left,newnode)
+//       }
+//    } else {
+//       if(root.right == null){
+//          root.right = newnode
+//       } else {
+//          this.insert(root.right,newnode)
+//       }
+//    }
+//   }
 
+//   preorder(root){
+//    console.log(root.value)
+//    this.preorder(root.left)
+//    this.preorder(root.right)
+//   }
 
+//   inorder(root){
+//    this.inorder(root.left)
+//    console.log(root)
+//    this.inorder(root.right)
+//   }
 
-      this.size++
-   }
-    apend(value){
-      const node = new Node(value)
-      if(this.isempty()){
-         this.head = node
-      } else {
-         let curr = this.head
-         while(curr.next){
-            curr = curr.next
-         }
-         curr.next = node
+//   postorder(root){
+//         this.postorder(root.left)
+//         this.postorder(root.right)
+//         console.log(root.value)
+//   }
 
-      }
-      this.size++
-    }
+//   bfs(){
+//    let arr = []
+//    arr.push(this.root)
 
-    insertValue(value,index){
-      if(index<0 || index > this.size){
-         return null
-      } 
-      if(index ==0){
-         this.prepend(value)
-      
-      }
-       else {
-          const node = new Node(value)
-         let curr = this.head
-         for(let i=0;i<index-1;i++){
-            curr =curr.next
-         }
-         node.next = curr.next
-         curr.next = node
-         this.size++
+//    while(arr.length){
+//       let curr = arr.shift()
+//       arr.push(curr)
+//       console.log(curr.value)
+//    } 
+//    if(curr.left){
+//       arr.push(curr.left)
+//    }
+//    if(curr.right){
+//       arr.push(curr.right)
+//    }
+   
 
-      }
-      
-    }
-
-
-        remove(index){
-         if(index<0 || this.size< index){
-            return null
-         }
-         let rem;
-         if(index == 0){
-            rem = this.head
-            this.head = this.head.next
-            return rem
-         } else {
-            let curr = this.head
-            for(let i=0;i<index-1;i++){
-               curr= curr.next
-            }
-            rem = curr.next
-            curr.next = rem.next
-
-         }
-         this.size--
-         return rem.value
-
-      }
-
-      removeMiddle(){
-         let fast = this.head
-         let slow = this.head
-         let prev = null
-  while(fast && fast.next){
-   fast = fast.next.next
-   slow = prev
-   slow = slow.next
-  }
-  prev.next  = slow.next
-  this.size--
-
-      }
-
-      print(){
-         let curr = this.head
-         let value=''
-         while(curr){
-            value += ` => ${curr.value}`
-            curr =curr.next
-         }
-
-         console.log('value is: ', value)
-      }
+//   }
 
 
 
-}
-const link =new linkedList()
-link .prepend(1)
-link .prepend(3)
-link.prepend(5)
-link.prepend(8)
-link.prepend(9)
+// }
 
-link.print()
-link.removeMiddle()
-link.print()
+// const bst1 = new bst()
+// bst.insertvalue(5)

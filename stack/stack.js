@@ -20,6 +20,11 @@ isempty(){
 print(){
     console.log(this.array.toString())
 }
+
+removemiddle(){
+    
+}
+
 }
 const sta = new stack()
 sta.push(10)

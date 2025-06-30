@@ -66,6 +66,30 @@
 
 // console.log(firstOccurrenceBinary([1, 2, 2, 2, 3, 4], 2));
 
+
+
+// function binarySearchRecursive(arr, target, low = 0, high = arr.length - 1) {
+//     if (low > high) {
+//         return -1; // Base case: not found
+//     }
+
+//     let mid = Math.floor((low + high) / 2);
+
+//     if (arr[mid] === target) {
+//         return mid; // Target found
+//     } else if (arr[mid] < target) {
+//         // Search in the right half
+//         return binarySearchRecursive(arr, target, mid + 1, high);
+//     } else {
+//         // Search in the left half
+//         return binarySearchRecursive(arr, target, low, mid - 1);
+//     }
+// }
+
+// const nums = [1, 3, 5, 7, 9, 11, 13];
+// console.log(binarySearchRecursive(nums, 9)); // Output: 4
+
+
 // function squareRoot(n) {
 //     if (n < 0) return -1; 
 //     let left = 0, right = n, ans = 0;
