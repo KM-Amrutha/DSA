@@ -162,19 +162,25 @@
 // // Example
 // console.log(charFrequency("hello world"));
 
-const arr = [1,2,3,4,5]
-const val = 5
-function bin(arr,val){
-    left =0;
-    right = arr.length-1
+// const arr = [1,2,3,4,5]
+// const val = 5
+// function bin(arr,val){
+//     left =0;
+//     right = arr.length-1
    
-        while(left<right){
-            let mid = Math.floor(left+right)/2
+//         while(left<right){
+//             let mid = Math.floor(left+right)/2
 
-            if(arr[mid] == val) return mid
-            if(arr[mid]< val) {left = mid+1}
-            else { right = mid-1}
+//             if(arr[mid] == val) return mid
+//             if(arr[mid]< val) {left = mid+1}
+//             else { right = mid-1}
 
-        }
-    }
+//         }
+//     }
+
+
+// find the longest consecutive repeating characters in string
+
+
+
 

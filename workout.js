@@ -6,6 +6,8 @@
 //   }
 // }
 
+const { version } = require("react")
+
 // const str = 'apple,orange,32,,joekl,332,dssas'
 
 // const res = str.split(',').map((item) => item == ''? null:item)
@@ -504,3 +506,95 @@
 
 // const bst1 = new bst()
 // bst.insertvalue(5)
+
+class heap{
+   constructor(){
+      this.heap = []
+   }
+
+   insert(value){
+      this.heap.push(value)
+      this.bubbleup()
+   }
+   bubbleup(){
+      let index= this.heap.length-1
+      let parent = Math.floor((index-1)/2)
+
+      while(index>0){
+         if(this.heap[index]<= this.heap[parent]) break;
+
+         [this.heap[index], this.heap[parent]] = [this.heap[parent], this.heap[index]]
+         index = parent
+         parent = Math.floor((index-1)/2)
+
+      }
+
+   }
+
+   
+   extractmax(){
+      if(this.heap.length == 0) return
+      if(this.heap.length == 1) return this.heap.pop()
+
+         let max = this.heap[0]
+         this.heap[0] = this.heap.pop()
+         this.heapify(0)
+         return max
+   }
+
+  heapify(index){
+   let left = 2*index+1
+   let right = 2*index+2
+
+   let largest = 0
+
+  
+   if(largest< this.heap.length && this.heap[left] > this.heap[largest]){
+      largest = left
+   }
+   if(right < this.heap.length && this.heap[right] > this.heap[largest]){
+      largest = right
+   }
+if(largest !== index){
+   [this.heap[index], this.heap[largest]] = [this.heap[largest],this.heap[index]]
+   this.heapify(largest)
+}
+
+  }
+
+
+heapsort(arr){
+   let sorted = []
+
+   for(let num of arr){
+      this.insert(num)
+   }
+   for(let i=0;i<arr.length;i++){
+      sorted.push(this.extractamx())
+   }
+      return sorted
+   
+}
+getsize(){
+   return this.heap.length
+}
+
+getmax(){
+   return this.heap[0]
+}
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+

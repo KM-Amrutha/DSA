@@ -20,6 +20,7 @@
 // }
 // console.log(sum(1234))
 
+
 // reverse a string
 
 // function reverse a string
@@ -32,6 +33,8 @@
 
 // console.log(reverse('hello'))
 
+
+
 // power of a number
 
 // function power(x,n){
@@ -42,3 +45,40 @@
 // console.log(power(2,10))
 
 
+// function isPalindrome(str) {
+//   if (str.length <= 1) return true;
+//   if (str[0] !== str[str.length - 1]) return false;
+//   return isPalindrome(str.slice(1, -1));
+// }
+
+// console.log(isPalindrome("madam")); 
+
+// flatten nested array
+// function flatten(arr) {
+//   let result = [];
+//   for (let item of arr) {
+//     if (Array.isArray(item)) {
+//       result = result.concat(flatten(item));
+//     } else {
+//       result.push(item);
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(flatten([1, [2, [3, 4]], 5])); // [1, 2, 3, 4, 5]
+
+// sum of nested array
+// function nestedSum(arr) {
+//   return arr.reduce((sum, val) =>
+//     Array.isArray(val) ? sum + nestedSum(val) : sum + val
+//   , 0);
+// }
+
+// console.log(nestedSum([1, [2, [3]]])); // 6
+
+
+const arr= [['apple',150],['orange',100],['grapes',120]]
+
+const obj = Object.fromEntries(arr)
+console.log(obj)
